@@ -54,7 +54,10 @@ class App extends Component {
 
   addPost(post) {
     const posts = [...this.state.posts, post];
-    this.setState({ posts: posts });
+    this.setState({ 
+      posts: posts, 
+      formValid: false
+    });
   }
 
   deletePost(key) {
@@ -112,11 +115,8 @@ class App extends Component {
           </ul>
           <Form 
             addPost={this.addPost} 
-            title={this.state.title} 
-            text={this.state.text} 
             formErrors={this.state.formErrors}
             handleUserInput={this.handleUserInput}
-            validateForm={this.validateForm}
             formValid={this.state.formValid}
           />
         </div>
